@@ -1,0 +1,49 @@
+<div class="tr-breadcrumb bg-image section-before">
+  <div class="container">
+    <div class="breadcrumb-info text-center">
+      <div class="page-title">
+        <h1>Create a New Account</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tr-account section-padding">
+  <div class="container text-center">
+    <div class="user-account">
+        <div class="account-content">
+          <form class="tr-form" name="myForm">
+            <div class="form-group">
+              <span ng-show="!myForm.fullName.$modelValue" class="float-left required">Required!</span>
+              <input type="text" class="form-control" placeholder="Full Name" ng-model="fullName" name="fullName">
+            </div>
+            <div class="form-group">
+              <span ng-show="!myForm.username.$modelValue" class="float-left required">Required!</span>
+              <input type="text" class="form-control" placeholder="Username" ng-model="username" name="username">
+            </div>
+            <div class="form-group">
+              {{ myForm.email.$error | json }}
+              <span ng-show="myForm.email.$valid" class="float-left required">Required!</span>
+              <input name="email" type="email" class="form-control" placeholder="your Email" ng-model="email">
+            </div>
+            <div class="form-group">
+              <span ng-show="!myForm.password.$modelValue" class="float-left required">Required!</span>
+              <input required type="password" class="form-control" placeholder="Password" ng-model="password" name="password">
+            </div>
+            <div class="form-group">
+              <span ng-show="!myForm.password2.$modelValue" class="float-left required">Required!</span>
+              <input required type="password" ng-model="password2" name="password2" class="form-control" placeholder="Confirm Password">
+            </div>
+            <div ng-show="errorbox" class="alert alert-danger mt-3">
+              {{ errorbox }}
+              </div>
+
+            <button type="button" class="btn btn-primary" ng-click="signUp()">Sign Up</button>
+          </form>
+          <div class="new-user text-center">
+            <span>Already Registered? <a href="#!/signin">Sign in</a> </span>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
